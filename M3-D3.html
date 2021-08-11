@@ -667,15 +667,15 @@
         const image_container = document.querySelector(".specialContainer")
         for (image of images){
             image_container.innerHTML += 
-          ` <div class="col col-sm-6 col-md-4 col-lg-3">
+          ` <div class="col col-sm-6 col-md-4 col-lg-3" id="${image.id}">
           <div class="card card-number-${image}">
           <img class="card-img-top" src="${image.src.medium}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <div class="p-0 m-0 card-information">
-              <a href="#" class="btn btn-primary HideMe">Hide</a>
-              <a href="#" class="btn btn-secondary">View</a>
+              <btn class="btn btn-primary HideMe" onclick="hideImage(${image.id})">Hide</btn>
+              <btn class="btn btn-secondary">View</btn>
               <p class="small minutes">ID:${image.id}</p>
             </div>
           </div>
@@ -706,8 +706,21 @@
 
     }
 
+//     grid
+//     .querySelectorAll(".btn.btn-outline-secondary:nth-child(2)") // finds the second button of type outline-secondary
+//     .forEach((btn) => {
+//       btn.innerText = "Hide"; //changes the inner text
+//       btn.onclick = (event) =>
+//         // event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.remove(); // navigating upward in the dom tree to find the .col element and remove it
+//         event.currentTarget.closest(".col").remove(); // modern approach: is going to find the closest element matching the condition
+//     });
+// };
+   
 
-      
+    const hideImage = function (target_id) {
+      let card = document.getElementById(target_id);
+      card.remove();
+}
     </script>
   </body>
 </html>
