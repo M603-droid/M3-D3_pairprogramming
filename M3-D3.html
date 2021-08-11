@@ -120,6 +120,17 @@
           font-size: 3.5rem;
         }
       }
+
+      /* .row .col{
+        display: inline-block;
+      } */
+
+      .card-information{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: center; */
+      }
     </style>
   </head>
   <body>
@@ -195,15 +206,116 @@
             them in a cool way!
           </p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Load Images</a>
-            <a href="#" class="btn btn-secondary my-2">Load Secondary Images</a>
+            <a href="#" class="btn btn-primary my-2 " data-toggle="button" aria-pressed="false" autocomplete="off" onclick="fetchImage()">Load Images</a>
+            <a href="#" class="btn btn-secondary my-2" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="fetchImage_2()">Load Secondary Images</a>
           </p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Tell me what you want" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="input-group-text" id="basic-addon2" onclick="fetch_SearchImage()">Search</button>
+            </div>
+          </div>
         </div>
       </section>
 
       <div class="album py-5 bg-light">
         <div class="container">
-          <div class="row">
+          <div class="row specialContainer">
+           
+            <!-- <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
                 <svg
@@ -480,146 +592,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    Thumbnail
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -646,14 +619,94 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+
     <script>
-      fetch(import { createClient } from 'pexels';
 
-const client = createClient('563492ad6f9170000100000138054aa9a0d048288de24c76e9a21747');
-const query = 'Nature';
+      
+      function fetchImage (){
+          fetch("https://strive-proxy.herokuapp.com/https://api.pexels.com/v1/search?query=water",{
+              method: 'GET',
+              headers: {
+                Authorization: "Bearer 563492ad6f9170000100000187a02e55e5fd4d04be6e2fd254efbb1b"}
+      }) .then((response)=>{
+          console.log(response)
+          return response.json()
+      })
+      .then(image => {
+          console.log(image);
+          displayImage(image.photos)
+      })
+      .catch(error =>{
+          console.error(error)
+      })
 
-client.photos.search({ query, per_page: 1 }).then(photos => {...});
-)
+    }
+   
+    function fetchImage_2 (){
+          fetch("https://strive-proxy.herokuapp.com/https://api.pexels.com/v1/search?query=food",{
+              method: 'GET',
+              headers: {
+                Authorization: "Bearer 563492ad6f9170000100000187a02e55e5fd4d04be6e2fd254efbb1b"}
+      }) .then((response)=>{
+          console.log(response)
+          return response.json()
+      })
+      .then(image => {
+          console.log(image);
+          displayImage(image.photos)
+      })
+      .catch(error =>{
+          console.error(error)
+      })
+
+    }
+
+
+    function displayImage (images){
+        //targeting the parent container
+        const image_container = document.querySelector(".specialContainer")
+        for (image of images){
+            image_container.innerHTML += 
+          ` <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="card card-number-${image}">
+          <img class="card-img-top" src="${image.src.medium}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="p-0 m-0 card-information">
+              <a href="#" class="btn btn-primary HideMe">Hide</a>
+              <a href="#" class="btn btn-secondary">View</a>
+              <p class="small minutes">ID:${image.id}</p>
+            </div>
+          </div>
+        </div>
+      </div>`
+        }
+      }
+
+
+      function fetch_SearchImage (){
+        //target search value
+        let getSearchValue = document.querySelector("input").value
+          fetch(`https://strive-proxy.herokuapp.com/https://api.pexels.com/v1/search?query=${getSearchValue}`,{
+              method: 'GET',
+              headers: {
+                Authorization: "Bearer 563492ad6f9170000100000187a02e55e5fd4d04be6e2fd254efbb1b"}
+      }) .then((response)=>{
+          console.log(response)
+          return response.json()
+      })
+      .then(image => {
+          console.log(image);
+          displayImage(image.photos)
+      })
+      .catch(error =>{
+          console.error(error)
+      })
+
+    }
+
+
       
     </script>
   </body>
