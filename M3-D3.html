@@ -672,9 +672,9 @@
           <img class="card-img-top" src="${image.src.medium}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Here are some pictures.</p>
             <div class="p-0 m-0 card-information">
-              <a href="#" class="btn btn-primary HideMe">Hide</a>
+              <a href="#" class="btn btn-primary HideMe" >Hide</a>
               <a href="#" class="btn btn-secondary">View</a>
               <p class="small minutes">ID:${image.id}</p>
             </div>
@@ -688,6 +688,7 @@
       function fetch_SearchImage (){
         //target search value
         let getSearchValue = document.querySelector("input").value
+        
           fetch(`https://strive-proxy.herokuapp.com/https://api.pexels.com/v1/search?query=${getSearchValue}`,{
               method: 'GET',
               headers: {
@@ -705,7 +706,7 @@
       })
 
     }
-
+    
 
       
     </script>
